@@ -28,6 +28,10 @@ const Featured = () => {
                                <FontAwesomeIcon icon="star" />
                                <FontAwesomeIcon icon="star-half-alt" />
                             </div>
+                            <div className="book__price">
+                                <span className="book__price--normal">$15.00</span>
+                                $10.00
+                            </div>
                         </div>
                     </div>
                 </div>
