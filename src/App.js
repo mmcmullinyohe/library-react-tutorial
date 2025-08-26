@@ -5,18 +5,19 @@ import Landing from './components/Landing';
 import Nav from './components/Nav';
 import Highlights from './components/Highlights';
 import Discounted from './components/Discounted';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import react from 'react';
 
 function App() {
   return (
+    <Router> 
     <div className="App">
+      <Route />
       <Nav />
-      <Landing />
-      <Highlights />
-      <Featured />
-      <Discounted />
-      <Explore />
+
       <Footer />
     </div>
+    </Router>
   );
 }
 
