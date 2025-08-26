@@ -1,5 +1,6 @@
 import Explore from './components/Explore';
-import Featured from './components/Featured'
+import Featured from './components/Featured';
+import Footer from './components/Footer'
 import Landing from './components/Landing';
 import Nav from './components/Nav';
 import Highlights from './components/Highlights';
@@ -14,6 +15,7 @@ function App() {
       <Featured />
       <Discounted />
       <Explore />
+      <Footer />
     </div>
   );
 }
