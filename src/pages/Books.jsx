@@ -3,6 +3,12 @@ import { books } from "../data";
 
 const Books = ({ books: initialBooks }) => {
     const [books, setBooks] = useState(initialBooks);
+    function filterBooks(filter) {
+        if (filter === 'LOW TO HIGH') {
+            setBooks(books.sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)))      
+        }
+
+    }
     return (
         <div id="books__body">
             <main id="books__main">
@@ -11,7 +17,7 @@ const Books = ({ books: initialBooks }) => {
                         <div className="row">
                             <div className="books__header">
                                 <h2 className="section__title books__header--title">All Books</h2>
-                                <select id="filter" defaultValue="DEFAULT">
+                                <select id="filter" defaultValue="DEFAULT" onChange={(event) => filterBooks(event.target.value)}>
                                     <option value="DEFAULT" disabled>Sort</option>
                                     <option value="LOW TO HIGH">Price, Low to High</option>
                                     <option value="HIGH TO LOW">Price, High to Low</option>
