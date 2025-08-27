@@ -1,10 +1,6 @@
-import Explore from './components/Explore';
-import Featured from './components/Featured';
+import Home from './pages/Home';
 import Footer from './components/Footer'
-import Landing from './components/Landing';
 import Nav from './components/Nav';
-import Highlights from './components/Highlights';
-import Discounted from './components/Discounted';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import react from 'react';
 
@@ -14,7 +10,9 @@ function App() {
     <div className="App">
       <Route />
       <Nav />
-
+      <Route path="/" exact component={Home} />
+      
+      <Home />
       <Footer />
     </div>
     </Router>
