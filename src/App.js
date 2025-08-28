@@ -1,4 +1,4 @@
-import Home from './pages/Home';
+import Home from './pages/home';
 import Footer from './components/Footer'
 import Nav from './components/Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
