@@ -16,17 +16,7 @@ function App() {
   }
 
   function changeQuantity(book, quantity) {
-    setCart(cart.map(item => {
-      if (item.id === book.id) {
-        return {
-          ...item, 
-          quantity: +quantity,
-        }
-      }
-      else {
-        return item
-      }
-    }))
+ console.log(book, quantity)
   }
 
     useEffect(() => {
