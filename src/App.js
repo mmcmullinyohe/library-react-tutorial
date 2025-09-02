@@ -15,8 +15,18 @@ function App() {
    setCart([...cart, {...book, quantity: 1}]);
   }
 
-  function changeQuantity(book) {
-
+  function changeQuantity(book, quantity) {
+    setCart(cart.map(item => {
+      if (item.id === book.id) {
+        return {
+          ...item, 
+          quantity: +quantity,
+        }
+      }
+      else {
+        return item
+      }
+    }))
   }
 
     useEffect(() => {
@@ -31,7 +41,9 @@ function App() {
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
           path="/books/:id"
-          render={() => <BookInfo books={books} addToCart={addToCart} cart={cart} changeQuantity={changeQuantity} />}
+          render={() => (
+          <BookInfo books={books} addToCart={addToCart} cart={cart} changeQuantity={changeQuantity} />
+          )}
         />
         <Route path="/cart" render={() => <Cart books={books} cart={cart} />} />
         <Footer />
