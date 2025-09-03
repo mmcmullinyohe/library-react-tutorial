@@ -25,6 +25,10 @@ function App() {
    )
   )
   }
+ 
+  function removeItem(item) {
+    console.log('removeItem', item)
+  }
 
     useEffect(() => {
     console.log(cart)
@@ -39,10 +43,20 @@ function App() {
         <Route
           path="/books/:id"
           render={() => (
-          <BookInfo books={books} addToCart={addToCart} cart={cart} changeQuantity={changeQuantity} />
+          <BookInfo books={books} addToCart={addToCart} cart={cart} changeQuantity={changeQuantity}/>
           )}
         />
-        <Route path="/cart" render={() => <Cart books={books} cart={cart} changeQuantity={changeQuantity}/>} />
+        <Route 
+        path="/cart" 
+        render={() => (
+        <Cart 
+        books={books} 
+        cart={cart} 
+        changeQuantity={changeQuantity} 
+        removeItem={removeItem}
+        /> 
+        )}
+        />
         <Footer />
       </div>
     </Router>
