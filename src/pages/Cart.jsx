@@ -31,7 +31,7 @@ const total = () => {
                   return (
                     <div className="cart__item">
                       <div className="cart__book">
-                        <img src={book.url} class="cart__book--img" alt="" />
+                        <img src={book.url} className="cart__book--img" alt="" />
                         <div className="cart__book--info">
                           <span className="cart__book--title">
                             {book.title}
