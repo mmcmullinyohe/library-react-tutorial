@@ -11,11 +11,12 @@ const Book = ({ book }) => {
   }
   return (
     <div className="book">
-      {img ?   
+      {img ? (  
       <>    
       <Link to={`/books/${book.id}`}>
         <figure className="book__img--wrapper">
-          <img src={book.url} 
+          <img 
+          src={book.url} 
           alt="" 
           className="book__img" 
           onLoad={imageLoaded}
@@ -30,16 +31,19 @@ const Book = ({ book }) => {
       < Rating rating={book.rating}/>
       <Price 
       salePrice={book.salePrice} 
-      originalPrice={book.originalPrice} />
+      originalPrice={book.originalPrice} 
+      />
       </>
-      }
+      ) : (
+        <>
       <div className="book__img--skeleton"> </div>
       <div className="skeleton book__title--skeleton"></div>
       <div className="skeleton rating--skeleton"></div>
       <div className="skeleton book__price--skeleton"></div>
-
-    </div>
+      </>
+  )}
+   </div>
   );
-};
+}
 
 export default Book;
