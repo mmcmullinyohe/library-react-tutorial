@@ -32,7 +32,7 @@ const Book = ({ book }) => {
           <Link to={`/books/${book.id}`}>
             <figure className="book__img--wrapper">
               <img
-                src={img.scr}
+                src={img.src}
                 alt=""
                 className="book__img"
               />
